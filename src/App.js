@@ -1,32 +1,25 @@
-import React, {useRef, useEffect} from 'react';
-import './App.css';
+import React from 'react'
 
-import {TweenMax, Power3} from 'gsap';
+import { Footer, Blog, Possibility, Features, WhatGPT3, Header} from './containers';
+import { CTA, Brand, Navbar} from './components';
+import './App.css'
 
-function App() {
-
-  let circle = useRef(null);
-  let circleRed = useRef(null);
-  let circleBlue = useRef(null);
-
-  useEffect(() => {
-    
-  }, [])
-
+const App = () => {
   return (
-    <div className="App">
-      <header className='App-header'>
-        <div className="circle-container">
-          <div
-          ref={el => circle = el} className='circle'></div>
-          <div
-          ref={el => circleRed = el} className='circle red'></div>
-          <div
-          ref={el => circleBlue = el} className='circle blue'></div>
-        </div>
-      </header>
+    <div className='App'>
+      <div className='gradient__bg'>
+        <Navbar />
+        <Header />
+      </div>
+      <Brand />
+      <WhatGPT3 />
+      <Features />
+      <Possibility />
+      <CTA />
+      <Blog />
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
