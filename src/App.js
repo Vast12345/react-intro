@@ -1,26 +1,32 @@
+import React, {useRef, useEffect} from 'react';
+import './App.css';
 
-import { useEffect } from 'react';
+import {TweenMax, Power3} from 'gsap';
 
-// 9922fd11
+function App() {
 
-const API_URL = 'https://www.ombdapi.com?apikey=9922fd11'
+  let circle = useRef(null);
+  let circleRed = useRef(null);
+  let circleBlue = useRef(null);
 
-const App = () => {
+  useEffect(() => {
+    
+  }, [])
 
-    const searchMovies = async (title) => {
-        const response = await fetch(`${API_URL}&s=${title}`)
-        const data = await response.json();
-
-        console.log(data);
-    }
-
-    useEffect(() => {
-        searchMovies('Blade Runner')
-    }, [])
-
-    return (
-        <h1>App</h1>
-    );
+  return (
+    <div className="App">
+      <header className='App-header'>
+        <div className="circle-container">
+          <div
+          ref={el => circle = el} className='circle'></div>
+          <div
+          ref={el => circleRed = el} className='circle red'></div>
+          <div
+          ref={el => circleBlue = el} className='circle blue'></div>
+        </div>
+      </header>
+    </div>
+  );
 }
 
 export default App;
